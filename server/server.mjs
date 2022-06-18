@@ -26,13 +26,13 @@ const rooms = {}
 const players = {};
 
 function onConnect(wsClient) {
-    console.log('Новый пользователь');
+    // console.log('Новый пользователь');
     let player = undefined;
     wsClient.on('message', function (message) {
         try {
             const jsonMessage = JSON.parse(message);
-            console.log(jsonMessage);
-            console.log(jsonMessage.action);
+            // console.log(jsonMessage);
+            // console.log(jsonMessage.action);
             switch (jsonMessage.action) {
                 case 'ECHO':
                     wsClient.send(jsonMessage.data);
@@ -130,7 +130,7 @@ function onConnect(wsClient) {
                     player = undefined;
                     break;
                 default:
-                    console.log('Неизвестная команда');
+                    // console.log('Неизвестная команда');
                     break;
             }
         } catch (error) {
@@ -139,7 +139,7 @@ function onConnect(wsClient) {
     });
     wsClient.on('close', function () {
         // отправка уведомления в консоль
-        console.log('Пользователь отключился');
+        // console.log('Пользователь отключился');
         if (player !== undefined) {
             rooms[player.room_id].observers_number--;
             if (rooms[player.room_id].observers_number === 0) {
@@ -149,10 +149,10 @@ function onConnect(wsClient) {
     });
 }
 
-console.log('Сервер запущен на 9000 порту');
+// console.log('Сервер запущен на 9000 порту');
 
 function delete_room(room_id) {
-    console.log("DELETING ROOM");
+    // console.log("DELETING ROOM");
     clearInterval(rooms[room_id].interval);
     for (const player of rooms[room_id].players) {
         delete players[player.id];

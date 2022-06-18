@@ -1,14 +1,14 @@
-const myWs = new WebSocket('ws://localhost:9000');
+const myWs = new WebSocket('ws://62.84.114.245:9000');
 let player_id = undefined;
 let room_id = undefined;
 let is_game_started = false;
 // обработчик проинформирует в консоль когда соединение установится
 myWs.onopen = function () {
-    console.log('подключился');
+    // console.log('подключился');
 };
 // обработчик сообщений от сервера
 myWs.onmessage = function (message) {
-    console.log('Message: %s', message.data);
+    // console.log('Message: %s', message.data);
 
     const json = JSON.parse(message.data);
 
@@ -36,6 +36,10 @@ myWs.onmessage = function (message) {
             document.querySelector("#join-text").textContent = "Этак комната уже занята(";
             break;
         case 'START_GAME':
+            document.querySelector('#player-score > span').textContent = '0';
+            document.querySelector('#speed > span').textContent = '0';
+            document.querySelector('#power > span').textContent = '0';
+
             document.querySelector('.goto-menu').classList.add("hidden");
             document.querySelector('.give-up').classList.remove("hidden");
             document.querySelector(".modal_window").classList.add("hidden");
@@ -76,7 +80,7 @@ myWs.onmessage = function (message) {
             is_game_started = false;
             break;
         default:
-            console.log('huj');
+            // console.log('huj');
             break;
     }
 };
