@@ -246,6 +246,7 @@ td {
 
 .free_tower_cell {
     background: gray;
+    border-radius: 25px;
 }
 
 .p1_cell {
@@ -254,6 +255,7 @@ td {
 
 .p1_tower_cell {
     background: darkblue;
+    border-radius: 25px;
 }
 
 .p2_cell {
@@ -262,6 +264,7 @@ td {
 
 .p2_tower_cell {
     background: darkgoldenrod;
+    border-radius: 25px;
 }
 
 .p3_cell {
@@ -270,6 +273,7 @@ td {
 
 .p3_tower_cell {
     background: darkgreen;
+    border-radius: 25px;
 }
 
 .p4_cell {
@@ -278,6 +282,7 @@ td {
 
 .p4_tower_cell {
     background: darkred;
+    border-radius: 25px;
 }
 
 #move-none {
@@ -313,7 +318,7 @@ td {
 }
 
 .p1_cell {
-    background: blue;
+    background: #357EC7;
 }
 
 .p1_tower_cell {
@@ -321,7 +326,7 @@ td {
 }
 
 .p2_cell {
-    background: yellow;
+    background: #CCFB5D;
 }
 
 .p2_tower_cell {
@@ -329,19 +334,19 @@ td {
 }
 
 .p3_cell {
-    background: green;
+    background: #50C878;
 }
 
 .p3_tower_cell {
-    background: darkgreen;
+    background: #254117;
 }
 
 .p4_cell {
-    background: red;
+    background: #F75D59;
 }
 
 .p4_tower_cell {
-    background: darkred;
+    background: #800000;
 }
 
 #move-down, #move-left, #move-right, #move-up {
@@ -565,19 +570,19 @@ td {
 }
 
 .player1_captured {
-    color: blue;
+    color: #357EC7;
 }
 
 .player2_captured {
-    color: #ffea00;
+    color: #CCFB5D;
 }
 
 .player3_captured {
-    color: green;
+    color: #50C878;
 }
 
 .player4_captured {
-    color: red;
+    color: #CB6D51;
 }
 
 button, input {
@@ -632,4 +637,17 @@ button, input {
 
 #rule-text img {
     vertical-align: middle;
+}
+
+.menu_list{
+    color: #778697;
+    font-size: 15pt;
+}
+
+.ui-button{
+    color: #778697;
+    font-size: 13pt;
+}
+.stat-head{
+    color: #778697;
 }
